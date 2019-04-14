@@ -17,6 +17,6 @@ test-rocks:
 	luajit test.lua
 
 upload-rocks:
-	luarocks upload --api-key=$LUAROCKS_APIKEY $(ROCKSPEC)
+	luarocks upload --api-key=$(LUAROCKS_APIKEY) $(ROCKSPEC)
 
 .PHONY: test test-all test-rocks upload-rocks

@@ -2,6 +2,7 @@ local inspect = require 'inspect'
 local nanotime = require 'chronos'.nanotime
 
 local dumper = {}
+dumper.VERSION = "dumper 0.1.0"
 
 local poutput = io.stderr
 local function eprint(s)
