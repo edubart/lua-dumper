@@ -74,14 +74,14 @@ all calls resets the timer, calling with no values can be used to just
 reset the timer. Returns the formated string plus the elapsed time
 in nanoseconds.
 
-### tdump(...)
-Import `dump`, `idump` and `tdump` functions to _G. Optionally
-an optiona argument `output` specifies the default output when printing.
-function dumper.import(out)
+### bdump(...)
+Dump any value using `dump` and printing traceback. Returns the formated
+string plus the traceback.
 
 ### import(output)
-Import `dump`, `idump` and `tdump` functions to _G. Optionally
+Import `dump`, `idump`, `bdump`, `tdump` functions to _G. Optionally
 an optiona argument `output` specifies the default output when printing.
+function dumper.import(out)
 
 ## License
 

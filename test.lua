@@ -1,8 +1,9 @@
-local dumper = require 'dumper'
+local dumper = dofile 'dumper.lua'
 
 local dump = dumper.dump
 local idump = dumper.idump
 local tdump = dumper.tdump
+local bdump = dumper.bdump
 
 --dumper.setoutput(nil)
 
@@ -47,3 +48,6 @@ assert(idump('s',0,false,nil) == '"s"\t0\tfalse\tnil')
 -- tdump
 tdump()
 assert(tdump('test'):match('[%d+].[%d+] ms\ttest'))
+
+-- bdump
+assert(bdump('something'):match('something%s+stack traceback:'))

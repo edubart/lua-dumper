@@ -76,6 +76,16 @@ function dumper.tdump(...)
   return dumper.dump(elapsedtext, ...), elapsed
 end
 
+--- Dump any value using `dump` and printing traceback. Returns the formated
+-- string plus the traceback.
+function dumper.bdump(...)
+  local tb = debug.traceback('', 2)
+  local nargs = select('#', ...)
+  local args = {...}
+  args[nargs+1] = tb
+  return dumper.dump(unpack(args, 1, nargs+1)), tb
+end
+
 --- Import `dump`, `idump` and `tdump` functions to _G. Optionally
 -- an optiona argument `output` specifies the default output when printing.
 function dumper.import(output)
@@ -85,6 +95,7 @@ function dumper.import(output)
   _G.dump = dumper.dump
   _G.idump = dumper.idump
   _G.tdump = dumper.tdump
+  _G.bdump = dumper.bdump
 end
 
 setmetatable(dumper, { __call = function(v, ...)
