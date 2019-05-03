@@ -1,5 +1,5 @@
 LUAEXE=lua
-ROCKSPEC=rocks/dumper-0.1.0-1.rockspec
+ROCKSPEC=rocks/dumper-0.1.1-1.rockspec
 
 test:
 	lua test.lua

@@ -1,8 +1,8 @@
 package = "dumper"
-version = "0.1.0-1"
+version = "0.1.1-1"
 source = {
   url = "git://github.com/edubart/lua-dumper.git",
-  tag = "v0.1.0"
+  tag = "v0.1.1"
 }
 description = {
   summary = "A value dumping library for quick debugging",
