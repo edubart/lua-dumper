@@ -21,6 +21,7 @@ local function hasmetamethod(t, method)
 end
 
 local function inspect_remove_mts(item, path)
+  if hasmetamethod(item, '__tostring') then return tostring(item) end
   if path[#path] ~= inspect.METATABLE then return item end
 end
 
